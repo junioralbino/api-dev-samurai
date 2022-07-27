@@ -1,14 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Main from './pages/Main';
+import MainPage from './pages/MainPage';
+import RepositoriesPages from './pages/RepositoriesPages';
 
 export default function Routes() {
   return (
     <Router>
       <Switch>
+        <Route path="/repositories">
+           <RepositoriesPages />
+        </Route>
         <Route path="/">
-          <Main />
+          <MainPage />
         </Route>
       </Switch>
     </Router>
