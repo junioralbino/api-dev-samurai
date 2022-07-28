@@ -5,7 +5,7 @@ export const Container = styled.div`
   padding: 1rem;
 `;
 
-export const Header =  styled.div`
+export const Header = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
@@ -43,16 +43,22 @@ export const Name = styled.h2`
     }
 `;
 
-export const Inner =  styled.div`
-  padding: 1rem;
+export const Inner = styled.div`
+   /* padding: 1rem; */
+  
 
   @media screen and (max-width:  ${(props) => props.theme.breakpoints.md}){
     display: none;
-   }
+  }
 `;
-
 
 export const Data = styled.p`
   display: flex;
   align-items: center;
+  line-height: 1.5;
+
+  svg {
+    margin-right: 10px;
+  }
+
 `;

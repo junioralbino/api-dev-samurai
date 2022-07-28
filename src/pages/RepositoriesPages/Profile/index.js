@@ -13,20 +13,16 @@ export const Profile = () => (
       </Header>
       <Inner>
         <Data>
-           <MdGroup size={20} />
-            30 <i>seguidores</i> &middot; 10 <i>seguindo</i>
+           <MdGroup size={20} /> 30 <i>seguidores</i> &middot; 10 <i>seguindo</i>
         </Data>
         <Data>
-             <MdWork size={20} />
-             Infocena Sistemas
+             <MdWork size={20} /> Infocena Sistemas
+        </Data>
+         <Data>
+             <MdLocationCity size={20} /> Contagem - MG
         </Data>
         <Data>
-             <MdLocationCity size={20} /> 
-             Contagem - MG
-        </Data>
-        <Data>
-           <MdLink />&nbsp;
-           <a href='https://junioralbino.com.br'>Junioralbino</a>
+           <MdLink />&nbsp; <a href='https://junioralbino.com.br'>Junioralbino</a>
         </Data>
       </Inner>
     </Container>
