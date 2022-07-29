@@ -9,11 +9,11 @@ export const Profile = () => (
       <Header>
         <Avatar src='https://avatars.githubusercontent.com/u/34866064?v=4'/>
         <Login>junioralbino</Login>
-        <Name>Junior albino de lima</Name>
+        <Name>Junior Albino</Name>
       </Header>
       <Inner>
         <Data>
-           <MdGroup size={20} /> 30 <i>seguidores</i> &middot; 10 <i>seguindo</i>
+           <MdGroup size={20} />&nbsp; 30&nbsp; <i>seguidores</i>&nbsp; &middot; 10 <i>&nbsp;seguindo</i>
         </Data>
         <Data>
              <MdWork size={20} /> Infocena Sistemas
