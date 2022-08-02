@@ -12,12 +12,12 @@ export const Container = styled.div`
 `;
 
 export const Name = styled.h3`
-  font-size: ${ (props) => props.theme.fontSize.large };
+  font-size: ${ (props) => props.theme.fontSizes.large };
   font-weight: normal;
 `;
 
 export const Description = styled.p`
-  font-size: ${ (props) => props.theme.fontSize.small};
+  font-size: ${ (props) => props.theme.fontSizes.small};
   line-height: 1.25;
   margin: 1rem 0;
 `;
@@ -27,6 +27,16 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: space-between;
   color: ${(props) => props.color || props.theme.colors.champagneDark };
-  font-size: ${ (props) => props.theme.fontSize.small};
+  font-size: ${ (props) => props.theme.fontSizes.small};
+`;
 
+export const Lang = styled.span`
+   color:  inherit;
+`;
+
+export const Link = styled.a`
+  color:  inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
 `;
