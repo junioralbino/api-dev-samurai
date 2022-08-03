@@ -5,7 +5,7 @@ import { MdGroup, MdLocationCity, MdWork, MdLink } from 'react-icons/md';
 
 import { Container, Header, Avatar, Login, Name, Inner, Data } from './styles';
 
-export const Profile = ({user}) => (
+const Profile = ({user}) => (
     <Container>
       <Header>
         <Avatar src={user.avatar_url} />
@@ -31,26 +31,28 @@ export const Profile = ({user}) => (
          )}
         
         {/* Validado se o user.blog existe */}
-        {user.blog && (
+         {user.blog && (
           <Data>
-          <MdLocationCity size={20} /> {user.blog}
+            <MdLink size={20} />
+            <a href={`\\${user.blog}`}>{user.blog}</a>
           </Data>
-         )}
+        )}
 
       </Inner>
     </Container>
 );
+
 Profile.propTypes = {
   user: PropTypes.shape({
     login: PropTypes.string.isRequired,
-    name:  PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     avatar_url: PropTypes.string.isRequired,
     followers: PropTypes.number.isRequired,
     following: PropTypes.number.isRequired,
     company: PropTypes.string,
     blog: PropTypes.string,
-    location: PropTypes.string
+    location: PropTypes.string,
   }).isRequired,
 };
 
-export default Profile
+export default Profile;

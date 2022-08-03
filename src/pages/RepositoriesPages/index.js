@@ -1,48 +1,78 @@
-import React from 'react'
+import React from 'react';
+
+import Profile from './Profile';
+import Filter from './Filter';
+import Repositories from './Repositories';
+
 import { Container, Sidebar, Main } from './styles';
 
-import Profile from './Profile/index';
-import Filter from './Filter/index';
-import Repositories from './Repositories/index';
+import { getLangsFrom } from '../../services/api';
 
-const RepositoriesPages = () => {
-  const user  = {
+const RepositoriesPage = () => {
+  const user = {
     login: 'devsamurai',
-    name:  'Dev Junior',
-    avatar_url: 'https://avatars.githubusercontent.com/u/55540536?s=200&v=4',
+    name: 'Felipe',
+    avatar_url: 'https://avatars.githubusercontent.com/u/55540536?v=4',
     followers: 0,
     following: 0,
     company: null,
-    blog: "https://devsamurai.com.br",
-    location: "São José dos Campos - SP",
+    blog: 'https://devsamurai.com.br',
+    location: 'São José dos Campos - SP',
   };
 
-  const respositories = [
-    { name: 'Repo 1', description: 'Descrição', html_url: 'https://devsamurai.com.br', language: 'Javascript'},
-    { name: 'Repo 2', description: 'Descrição 2', html_url: 'https://devsamurai.com.br', language: 'PHP'},
-    { name: 'Repo 3', description: 'Descrição 3', html_url: 'https://devsamurai.com.br', language: 'Ruby'},
-    { name: 'Repo 4', description: 'Descrição 4', html_url: 'https://devsamurai.com.br', language: 'JAVA'},
-    { name: 'Repo 5', description: 'Descrição 5', html_url: 'https://devsamurai.com.br', language: 'TypeScript'},
+  // eslint-disable-next-line no-unused-vars
+  const repositories = [
+    {
+      name: 'Repo 1',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: 'JavaScript',
+    },
+    {
+      name: 'Repo 2',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: 'JavaScript',
+    },
+    {
+      name: 'Repo 3',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: 'PHP',
+    },
+    {
+      name: 'Repo 4',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: null,
+    },
+    {
+      name: 'Repo 5',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: 'TypeScript',
+    },
+    {
+      name: 'Repo 6',
+      description: 'Descrição',
+      html_url: 'https://devsamurai.com.br',
+      language: 'Ruby',
+    },
   ];
-   
-  //Calculos do filter
-  const languagens = [
-    {name: 'Javascript', count: 3, color: '#f1c40f'},
-    {name: 'Shell', count: 2, color: '#95a5a6'},
-    {name: 'PHP', count: 2, color: '#3498db'},
-    {name: 'Ruby', count: 1, color: '#e74c3c'},
-  ];
+
+  const languages = getLangsFrom(repositories);
 
   return (
     <Container>
-     <Sidebar>
+      <Sidebar>
         <Profile user={user} />
-        <Filter  languagens={languagens} />
-    </Sidebar>
-     <Main>
-       <Repositories />
-     </Main>
+        <Filter languages={languages} />
+      </Sidebar>
+      <Main>
+        <Repositories />
+      </Main>
     </Container>
-)};
+  );
+};
 
-export default RepositoriesPages
+export default RepositoriesPage;
