@@ -8,7 +8,7 @@ export default function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/repositories">
+        <Route path="/:login/repositories">
            <RepositoriesPages />
         </Route>
         <Route path="/">
